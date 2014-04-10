@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C98BD51C18F7160800F0F61B /* HRDStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C98BD51B18F7160800F0F61B /* HRDStarView.m */; };
 		C9AF889C18F67EA1005E0CEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AF889B18F67EA1005E0CEC /* Foundation.framework */; };
 		C9AF889E18F67EA1005E0CEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AF889D18F67EA1005E0CEC /* CoreGraphics.framework */; };
 		C9AF88A018F67EA1005E0CEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AF889F18F67EA1005E0CEC /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C98BD51A18F7160800F0F61B /* HRDStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDStarView.h; sourceTree = "<group>"; };
+		C98BD51B18F7160800F0F61B /* HRDStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDStarView.m; sourceTree = "<group>"; };
 		C9AF889818F67EA1005E0CEC /* HRDiagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HRDiagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9AF889B18F67EA1005E0CEC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C9AF889D18F67EA1005E0CEC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -117,6 +120,8 @@
 				C9AF88AD18F67EA1005E0CEC /* Main.storyboard */,
 				C9AF88B018F67EA1005E0CEC /* HRDViewController.h */,
 				C9AF88B118F67EA1005E0CEC /* HRDViewController.m */,
+				C98BD51A18F7160800F0F61B /* HRDStarView.h */,
+				C98BD51B18F7160800F0F61B /* HRDStarView.m */,
 				C9AF88B318F67EA1005E0CEC /* Images.xcassets */,
 				C9AF88A218F67EA1005E0CEC /* Supporting Files */,
 			);
@@ -256,6 +261,7 @@
 				C9AF88A818F67EA1005E0CEC /* main.m in Sources */,
 				C9AF88B218F67EA1005E0CEC /* HRDViewController.m in Sources */,
 				C9AF88AC18F67EA1005E0CEC /* HRDAppDelegate.m in Sources */,
+				C98BD51C18F7160800F0F61B /* HRDStarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
