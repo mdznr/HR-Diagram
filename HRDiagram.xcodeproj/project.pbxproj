@@ -200,6 +200,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Matt Zanchelli";
 				TargetAttributes = {
+					C9AF889718F67EA1005E0CEC = {
+						DevelopmentTeam = 3SZ7MS7NXC;
+					};
 					C9AF88B818F67EA1005E0CEC = {
 						TestTargetID = C9AF889718F67EA1005E0CEC;
 					};
@@ -379,6 +382,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HRDiagram/HRDiagram-Prefix.pch";
 				INFOPLIST_FILE = "HRDiagram/HRDiagram-Info.plist";
@@ -392,6 +396,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HRDiagram/HRDiagram-Prefix.pch";
 				INFOPLIST_FILE = "HRDiagram/HRDiagram-Info.plist";
