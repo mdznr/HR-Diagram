@@ -1,0 +1,474 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C9AF889C18F67EA1005E0CEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AF889B18F67EA1005E0CEC /* Foundation.framework */; };
+		C9AF889E18F67EA1005E0CEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AF889D18F67EA1005E0CEC /* CoreGraphics.framework */; };
+		C9AF88A018F67EA1005E0CEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AF889F18F67EA1005E0CEC /* UIKit.framework */; };
+		C9AF88A618F67EA1005E0CEC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9AF88A418F67EA1005E0CEC /* InfoPlist.strings */; };
+		C9AF88A818F67EA1005E0CEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AF88A718F67EA1005E0CEC /* main.m */; };
+		C9AF88AC18F67EA1005E0CEC /* HRDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AF88AB18F67EA1005E0CEC /* HRDAppDelegate.m */; };
+		C9AF88AF18F67EA1005E0CEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9AF88AD18F67EA1005E0CEC /* Main.storyboard */; };
+		C9AF88B218F67EA1005E0CEC /* HRDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AF88B118F67EA1005E0CEC /* HRDViewController.m */; };
+		C9AF88B418F67EA1005E0CEC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9AF88B318F67EA1005E0CEC /* Images.xcassets */; };
+		C9AF88BB18F67EA1005E0CEC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AF88BA18F67EA1005E0CEC /* XCTest.framework */; };
+		C9AF88BC18F67EA1005E0CEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AF889B18F67EA1005E0CEC /* Foundation.framework */; };
+		C9AF88BD18F67EA1005E0CEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AF889F18F67EA1005E0CEC /* UIKit.framework */; };
+		C9AF88C518F67EA1005E0CEC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9AF88C318F67EA1005E0CEC /* InfoPlist.strings */; };
+		C9AF88C718F67EA1005E0CEC /* HRDiagramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AF88C618F67EA1005E0CEC /* HRDiagramTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C9AF88BE18F67EA1005E0CEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9AF889018F67EA1005E0CEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9AF889718F67EA1005E0CEC;
+			remoteInfo = HRDiagram;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C9AF889818F67EA1005E0CEC /* HRDiagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HRDiagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9AF889B18F67EA1005E0CEC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C9AF889D18F67EA1005E0CEC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C9AF889F18F67EA1005E0CEC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C9AF88A318F67EA1005E0CEC /* HRDiagram-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HRDiagram-Info.plist"; sourceTree = "<group>"; };
+		C9AF88A518F67EA1005E0CEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C9AF88A718F67EA1005E0CEC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C9AF88A918F67EA1005E0CEC /* HRDiagram-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HRDiagram-Prefix.pch"; sourceTree = "<group>"; };
+		C9AF88AA18F67EA1005E0CEC /* HRDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRDAppDelegate.h; sourceTree = "<group>"; };
+		C9AF88AB18F67EA1005E0CEC /* HRDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRDAppDelegate.m; sourceTree = "<group>"; };
+		C9AF88AE18F67EA1005E0CEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C9AF88B018F67EA1005E0CEC /* HRDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRDViewController.h; sourceTree = "<group>"; };
+		C9AF88B118F67EA1005E0CEC /* HRDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRDViewController.m; sourceTree = "<group>"; };
+		C9AF88B318F67EA1005E0CEC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C9AF88B918F67EA1005E0CEC /* HRDiagramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HRDiagramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9AF88BA18F67EA1005E0CEC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C9AF88C218F67EA1005E0CEC /* HRDiagramTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HRDiagramTests-Info.plist"; sourceTree = "<group>"; };
+		C9AF88C418F67EA1005E0CEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C9AF88C618F67EA1005E0CEC /* HRDiagramTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRDiagramTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C9AF889518F67EA1005E0CEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9AF889E18F67EA1005E0CEC /* CoreGraphics.framework in Frameworks */,
+				C9AF88A018F67EA1005E0CEC /* UIKit.framework in Frameworks */,
+				C9AF889C18F67EA1005E0CEC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9AF88B618F67EA1005E0CEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9AF88BB18F67EA1005E0CEC /* XCTest.framework in Frameworks */,
+				C9AF88BD18F67EA1005E0CEC /* UIKit.framework in Frameworks */,
+				C9AF88BC18F67EA1005E0CEC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C9AF888F18F67EA1005E0CEC = {
+			isa = PBXGroup;
+			children = (
+				C9AF88A118F67EA1005E0CEC /* HRDiagram */,
+				C9AF88C018F67EA1005E0CEC /* HRDiagramTests */,
+				C9AF889A18F67EA1005E0CEC /* Frameworks */,
+				C9AF889918F67EA1005E0CEC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C9AF889918F67EA1005E0CEC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9AF889818F67EA1005E0CEC /* HRDiagram.app */,
+				C9AF88B918F67EA1005E0CEC /* HRDiagramTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9AF889A18F67EA1005E0CEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9AF889B18F67EA1005E0CEC /* Foundation.framework */,
+				C9AF889D18F67EA1005E0CEC /* CoreGraphics.framework */,
+				C9AF889F18F67EA1005E0CEC /* UIKit.framework */,
+				C9AF88BA18F67EA1005E0CEC /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9AF88A118F67EA1005E0CEC /* HRDiagram */ = {
+			isa = PBXGroup;
+			children = (
+				C9AF88AA18F67EA1005E0CEC /* HRDAppDelegate.h */,
+				C9AF88AB18F67EA1005E0CEC /* HRDAppDelegate.m */,
+				C9AF88AD18F67EA1005E0CEC /* Main.storyboard */,
+				C9AF88B018F67EA1005E0CEC /* HRDViewController.h */,
+				C9AF88B118F67EA1005E0CEC /* HRDViewController.m */,
+				C9AF88B318F67EA1005E0CEC /* Images.xcassets */,
+				C9AF88A218F67EA1005E0CEC /* Supporting Files */,
+			);
+			path = HRDiagram;
+			sourceTree = "<group>";
+		};
+		C9AF88A218F67EA1005E0CEC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C9AF88A318F67EA1005E0CEC /* HRDiagram-Info.plist */,
+				C9AF88A418F67EA1005E0CEC /* InfoPlist.strings */,
+				C9AF88A718F67EA1005E0CEC /* main.m */,
+				C9AF88A918F67EA1005E0CEC /* HRDiagram-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C9AF88C018F67EA1005E0CEC /* HRDiagramTests */ = {
+			isa = PBXGroup;
+			children = (
+				C9AF88C618F67EA1005E0CEC /* HRDiagramTests.m */,
+				C9AF88C118F67EA1005E0CEC /* Supporting Files */,
+			);
+			path = HRDiagramTests;
+			sourceTree = "<group>";
+		};
+		C9AF88C118F67EA1005E0CEC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C9AF88C218F67EA1005E0CEC /* HRDiagramTests-Info.plist */,
+				C9AF88C318F67EA1005E0CEC /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C9AF889718F67EA1005E0CEC /* HRDiagram */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9AF88CA18F67EA1005E0CEC /* Build configuration list for PBXNativeTarget "HRDiagram" */;
+			buildPhases = (
+				C9AF889418F67EA1005E0CEC /* Sources */,
+				C9AF889518F67EA1005E0CEC /* Frameworks */,
+				C9AF889618F67EA1005E0CEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HRDiagram;
+			productName = HRDiagram;
+			productReference = C9AF889818F67EA1005E0CEC /* HRDiagram.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C9AF88B818F67EA1005E0CEC /* HRDiagramTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9AF88CD18F67EA1005E0CEC /* Build configuration list for PBXNativeTarget "HRDiagramTests" */;
+			buildPhases = (
+				C9AF88B518F67EA1005E0CEC /* Sources */,
+				C9AF88B618F67EA1005E0CEC /* Frameworks */,
+				C9AF88B718F67EA1005E0CEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9AF88BF18F67EA1005E0CEC /* PBXTargetDependency */,
+			);
+			name = HRDiagramTests;
+			productName = HRDiagramTests;
+			productReference = C9AF88B918F67EA1005E0CEC /* HRDiagramTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9AF889018F67EA1005E0CEC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = HRD;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Matt Zanchelli";
+				TargetAttributes = {
+					C9AF88B818F67EA1005E0CEC = {
+						TestTargetID = C9AF889718F67EA1005E0CEC;
+					};
+				};
+			};
+			buildConfigurationList = C9AF889318F67EA1005E0CEC /* Build configuration list for PBXProject "HRDiagram" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C9AF888F18F67EA1005E0CEC;
+			productRefGroup = C9AF889918F67EA1005E0CEC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C9AF889718F67EA1005E0CEC /* HRDiagram */,
+				C9AF88B818F67EA1005E0CEC /* HRDiagramTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C9AF889618F67EA1005E0CEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9AF88B418F67EA1005E0CEC /* Images.xcassets in Resources */,
+				C9AF88A618F67EA1005E0CEC /* InfoPlist.strings in Resources */,
+				C9AF88AF18F67EA1005E0CEC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9AF88B718F67EA1005E0CEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9AF88C518F67EA1005E0CEC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C9AF889418F67EA1005E0CEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9AF88A818F67EA1005E0CEC /* main.m in Sources */,
+				C9AF88B218F67EA1005E0CEC /* HRDViewController.m in Sources */,
+				C9AF88AC18F67EA1005E0CEC /* HRDAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9AF88B518F67EA1005E0CEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9AF88C718F67EA1005E0CEC /* HRDiagramTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C9AF88BF18F67EA1005E0CEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9AF889718F67EA1005E0CEC /* HRDiagram */;
+			targetProxy = C9AF88BE18F67EA1005E0CEC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C9AF88A418F67EA1005E0CEC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9AF88A518F67EA1005E0CEC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C9AF88AD18F67EA1005E0CEC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9AF88AE18F67EA1005E0CEC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C9AF88C318F67EA1005E0CEC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9AF88C418F67EA1005E0CEC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C9AF88C818F67EA1005E0CEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		C9AF88C918F67EA1005E0CEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C9AF88CB18F67EA1005E0CEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HRDiagram/HRDiagram-Prefix.pch";
+				INFOPLIST_FILE = "HRDiagram/HRDiagram-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C9AF88CC18F67EA1005E0CEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HRDiagram/HRDiagram-Prefix.pch";
+				INFOPLIST_FILE = "HRDiagram/HRDiagram-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C9AF88CE18F67EA1005E0CEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HRDiagram.app/HRDiagram";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HRDiagram/HRDiagram-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "HRDiagramTests/HRDiagramTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C9AF88CF18F67EA1005E0CEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HRDiagram.app/HRDiagram";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HRDiagram/HRDiagram-Prefix.pch";
+				INFOPLIST_FILE = "HRDiagramTests/HRDiagramTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C9AF889318F67EA1005E0CEC /* Build configuration list for PBXProject "HRDiagram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9AF88C818F67EA1005E0CEC /* Debug */,
+				C9AF88C918F67EA1005E0CEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9AF88CA18F67EA1005E0CEC /* Build configuration list for PBXNativeTarget "HRDiagram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9AF88CB18F67EA1005E0CEC /* Debug */,
+				C9AF88CC18F67EA1005E0CEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C9AF88CD18F67EA1005E0CEC /* Build configuration list for PBXNativeTarget "HRDiagramTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9AF88CE18F67EA1005E0CEC /* Debug */,
+				C9AF88CF18F67EA1005E0CEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C9AF889018F67EA1005E0CEC /* Project object */;
+}
