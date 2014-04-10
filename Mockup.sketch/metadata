@@ -5,18 +5,71 @@
 	<key>app</key>
 	<string>com.bohemiancoding.sketch.internal</string>
 	<key>build</key>
-	<integer>7229</integer>
+	<integer>7561</integer>
 	<key>commit</key>
-	<string>6deaf502ae1ea8f46a06942b974ff4464d455d8d</string>
+	<string>421b5ab1617d3a0def25bf53ababb8a7c8aabc34</string>
 	<key>fonts</key>
 	<array>
 		<string>HelveticaNeue-Light</string>
 		<string>HelveticaNeue-Light</string>
 		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>STHeitiSC-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>STHeitiSC-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>STHeitiSC-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>STHeitiSC-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>STHeitiSC-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>STHeitiSC-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>STHeitiSC-Light</string>
+		<string>HelveticaNeue-Light</string>
+		<string>STHeitiSC-Light</string>
 	</array>
 	<key>length</key>
-	<integer>4182613</integer>
+	<integer>237273</integer>
 	<key>version</key>
-	<integer>35</integer>
+	<integer>36</integer>
 </dict>
 </plist>
