@@ -464,6 +464,7 @@
 				C9AF88CC18F67EA1005E0CEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C9AF88CD18F67EA1005E0CEC /* Build configuration list for PBXNativeTarget "HRDiagramTests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +473,7 @@
 				C9AF88CF18F67EA1005E0CEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
