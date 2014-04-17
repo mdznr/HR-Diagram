@@ -18,6 +18,9 @@
 
 @interface HRDPlotView ()
 
+///	A newly created star.
+@property (strong, nonatomic) HRDStarView *youngStar;
+
 @end
 
 @implementation HRDPlotView
@@ -60,7 +63,8 @@
 
 ///	Create a new star at a point.
 ///	@param point The point at which to center the star.
-- (void)createStarAtPoint:(CGPoint)point
+/// @return A reference to the star that was created.
+- (HRDStarView *)createStarAtPoint:(CGPoint)point
 {
 	// Crete the star at the point.
 #warning how to handle frame size?
@@ -84,6 +88,8 @@
 					 animations:^{
 						 star.frame = CGRectMake(point.x-22, point.y-22, 44, 44);
 					 } completion:nil];
+	
+	return star;
 }
 
 ///	Add a star to the plot.
@@ -154,17 +160,27 @@
 	switch (sender.state) {
 		case UIGestureRecognizerStateBegan:
 			// Create a star at that point.
-			[self createStarAtPoint:point];
+			self.youngStar = [self createStarAtPoint:point];
 			break;
 		case UIGestureRecognizerStateChanged:
-			// TODO: Move star.
+			// Move star to stay centered with touch.
+			self.youngStar.center = [sender locationInView:self];
+			// TODO:
 			break;
 		case UIGestureRecognizerStateEnded:
+			self.youngStar = nil;
 			break;
 		case UIGestureRecognizerStateCancelled:
 			break;
 		default:
 			break;
+	}
+}
+
+- (void)removeAllStars
+{
+	for ( UIView *subview in self.subviews ) {
+		[subview removeFromSuperview];
 	}
 }
 

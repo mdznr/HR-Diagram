@@ -10,4 +10,7 @@
 
 @interface HRDPlotView : UIView
 
+///	Remove all the stars.
+- (void)removeAllStars;
+
 @end
