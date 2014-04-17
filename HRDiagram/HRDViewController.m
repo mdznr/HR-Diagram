@@ -42,7 +42,7 @@
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     if ( event.subtype == UIEventTypeMotion ){
-		[_plotView removeAllStars];
+		[_plotView removeAllStarsAnimated:YES];
     }
 }
 

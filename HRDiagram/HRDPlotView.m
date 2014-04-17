@@ -184,4 +184,28 @@
 	}
 }
 
+- (void)removeAllStarsWithAnimation
+{
+	for ( UIView *subview in self.subviews ) {
+		[UIView animateWithDuration:0.4f
+							  delay:0.0f
+							options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseInOut
+						 animations:^{
+							 subview.alpha = 0.0f;
+						 }
+						 completion:^(BOOL finished) {
+							 [subview removeFromSuperview];
+						 }];
+	}
+}
+
+- (void)removeAllStarsAnimated:(BOOL)animated
+{
+	if ( animated ) {
+		[self removeAllStarsWithAnimation];
+	} else {
+		[self removeAllStars];
+	}
+}
+
 @end

@@ -11,6 +11,7 @@
 @interface HRDPlotView : UIView
 
 ///	Remove all the stars.
-- (void)removeAllStars;
+///	@param animated whether or not to animate.
+- (void)removeAllStarsAnimated:(BOOL)animated;
 
 @end
