@@ -68,8 +68,7 @@
 {
 	// Crete the star at the point.
 #warning how to handle frame size?
-	HRDStarView *star = [[HRDStarView alloc] initWithFrame:(CGRect){CGPointZero, CGSizeMake(44, 44)}];
-	star.center = point;
+	HRDStarView *star = [[HRDStarView alloc] initWithFrame:CGRectMake(point.x-1, point.y+1, 2, 2)];
 	
 	// Add gesture recognizers.
 	UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPanOnStar:)];
@@ -79,6 +78,16 @@
 	
 	// Add the star.
 	[self addStar:star];
+	
+	// Animate to expanding star.
+	[UIView animateWithDuration:0.4f
+						  delay:0.0f
+		 usingSpringWithDamping:0.6f
+		  initialSpringVelocity:0.5f
+						options:UIViewAnimationOptionBeginFromCurrentState
+					 animations:^{
+						 star.frame = CGRectMake(point.x-22, point.y-22, 44, 44);
+					 } completion:nil];
 }
 
 ///	Add a star to the plot.
@@ -130,7 +139,6 @@
 - (void)didTapOnStar:(UITapGestureRecognizer *)sender
 {
 	HRDStarView *star = (HRDStarView *) sender.view;
-	
 	// TODO: Bring up popover menu with stats.
 }
 
