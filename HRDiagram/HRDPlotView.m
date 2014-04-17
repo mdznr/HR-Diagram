@@ -55,6 +55,9 @@
 {
 	_stars = [[NSMutableArray alloc] initWithCapacity:1];
 	
+	UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(didLongPress:)];
+	[self addGestureRecognizer:longPress];
+	
 	// Create the first star at a particular point.
 	[self createStarAtPoint:SUN_CENTER];
 }
@@ -71,6 +74,8 @@
 	// Add gesture recognizers.
 	UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPanOnStar:)];
 	[star addGestureRecognizer:pan];
+	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnStar:)];
+	[star addGestureRecognizer:tap];
 	
 	// Add the star.
 	[self addStar:star];
@@ -84,6 +89,11 @@
 	[self addSubview:star];
 }
 
+
+#pragma mark - Gesture Recognizers
+
+///	Did pan on a star.
+///	@param sender The pan gesture recognizer sending the event.
 - (void)didPanOnStar:(UIPanGestureRecognizer *)sender
 {
 	HRDStarView *star = (HRDStarView *) sender.view;
@@ -103,15 +113,43 @@
 			sender.view.center = CGPointMake(xPos, yPos);
 			
 			// The percentage of the x and y values on the graph.
-			CGFloat x, y;
-			x = (xPos - 0) / PLOT_WIDTH;
-			y = (yPos - 0) / PLOT_HEIGHT;
+			CGFloat x = (xPos - 0) / PLOT_WIDTH;
+			CGFloat y = (yPos - 0) / PLOT_HEIGHT;
 			
 			star.surfaceTemperature = x;
 			star.absoluteMagnitude = y;
 		} break;
 		case UIGestureRecognizerStateCancelled:
 		case UIGestureRecognizerStateEnded:
+			break;
+		default:
+			break;
+	}
+}
+
+- (void)didTapOnStar:(UITapGestureRecognizer *)sender
+{
+	HRDStarView *star = (HRDStarView *) sender.view;
+	
+	// TODO: Bring up popover menu with stats.
+}
+
+- (void)didLongPress:(UILongPressGestureRecognizer *)sender
+{
+	// Find where the long press was.
+	CGPoint point = [sender locationInView:sender.view];
+	
+	switch (sender.state) {
+		case UIGestureRecognizerStateBegan:
+			// Create a star at that point.
+			[self createStarAtPoint:point];
+			break;
+		case UIGestureRecognizerStateChanged:
+			// TODO: Move star.
+			break;
+		case UIGestureRecognizerStateEnded:
+			break;
+		case UIGestureRecognizerStateCancelled:
 			break;
 		default:
 			break;
