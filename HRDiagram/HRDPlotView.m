@@ -54,7 +54,9 @@
 
 - (void)commonInit
 {
+	// Create long press gesture recognizer.
 	UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(didLongPress:)];
+	longPress.minimumPressDuration = 0.2f;
 	[self addGestureRecognizer:longPress];
 	
 	// Create the first star at a particular point.
@@ -82,8 +84,8 @@
 	// Animate to expanding star.
 	[UIView animateWithDuration:0.4f
 						  delay:0.0f
-		 usingSpringWithDamping:0.6f
-		  initialSpringVelocity:0.5f
+		 usingSpringWithDamping:0.5f
+		  initialSpringVelocity:2.0f
 						options:UIViewAnimationOptionBeginFromCurrentState
 					 animations:^{
 						 star.frame = CGRectMake(point.x-22, point.y-22, 44, 44);
