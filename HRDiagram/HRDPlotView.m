@@ -18,8 +18,6 @@
 
 @interface HRDPlotView ()
 
-@property (strong, nonatomic) NSMutableArray *stars;
-
 @end
 
 @implementation HRDPlotView
@@ -53,8 +51,6 @@
 
 - (void)commonInit
 {
-	_stars = [[NSMutableArray alloc] initWithCapacity:1];
-	
 	UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(didLongPress:)];
 	[self addGestureRecognizer:longPress];
 	
@@ -94,7 +90,6 @@
 ///	@param star The star to add to the plot.
 - (void)addStar:(HRDStarView *)star
 {
-	[_stars addObject:star];
 	[self addSubview:star];
 }
 
@@ -116,21 +111,30 @@
 			[sender setTranslation:CGPointZero inView:self];
 			
 			// Update the location of the star on the diagram.
-			// The coordinates of the starView relative to the entire view.
-			CGFloat xPos = MIN(MAX(0, (star.center.x + translation.x)), PLOT_WIDTH);
-			CGFloat yPos = MIN(MAX(0, (star.center.y + translation.y)), PLOT_HEIGHT);
-			sender.view.center = CGPointMake(xPos, yPos);
+			sender.view.center = CGPointMake((star.center.x + translation.x), (star.center.y + translation.y));
 			
 			// The percentage of the x and y values on the graph.
-			CGFloat x = (xPos - 0) / PLOT_WIDTH;
-			CGFloat y = (yPos - 0) / PLOT_HEIGHT;
+			CGFloat x = star.center.x / PLOT_WIDTH;
+			CGFloat y = star.center.y / PLOT_HEIGHT;
 			
 			star.surfaceTemperature = x;
 			star.absoluteMagnitude = y;
+			
+			// Make transparent if it will be removed.
+			if ( !CGRectContainsPoint(self.bounds, sender.view.center) ) {
+				star.alpha = 0.5f;
+			} else {
+				star.alpha = 1.0f;
+			}
+			
 		} break;
 		case UIGestureRecognizerStateCancelled:
-		case UIGestureRecognizerStateEnded:
-			break;
+		case UIGestureRecognizerStateEnded: {
+			if ( !CGRectContainsPoint(self.bounds, sender.view.center) ) {
+				// TODO: Poof?
+				[sender.view removeFromSuperview];
+			}
+		} break;
 		default:
 			break;
 	}
