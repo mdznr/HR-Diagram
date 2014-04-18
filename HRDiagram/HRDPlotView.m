@@ -9,7 +9,7 @@
 #import "HRDPlotView.h"
 
 #import "HRDStarView.h"
-#import "HRDStarInfoTableViewController.h"
+#import "HRDStarInfoViewController.h"
 
 #define SUN_FRAME CGRectMake(566, 360, 44, 44)
 #define SUN_CENTER CGPointMake(588, 382)
@@ -157,9 +157,10 @@
 	HRDStarView *star = (HRDStarView *) sender.view;
 	// TODO: Bring up popover menu with stats.
 	
-	HRDStarInfoTableViewController *vc = [[HRDStarInfoTableViewController alloc] initWithNibName:@"HRDStarInfoTableViewController" bundle:nil];
+	HRDStarInfoViewController *vc = [[HRDStarInfoViewController alloc] initWithNibName:@"HRDStarInfoViewController" bundle:nil];
 	// Configure VC
 	self.popover = [[UIPopoverController alloc] initWithContentViewController:vc];
+	self.popover.popoverContentSize = CGSizeMake(264, 205);
 	[self.popover presentPopoverFromRect:star.frame inView:self permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
