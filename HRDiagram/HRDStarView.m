@@ -55,17 +55,19 @@
 
 #pragma mark - Properties
 
-- (void)setAbsoluteMagnitude:(CGFloat)absoluteMagnitude
+- (void)setAbsoluteMagnitude:(double)absoluteMagnitude
 {
 	_absoluteMagnitude = absoluteMagnitude;
 	
-	// TODO: Recalculate luminosity
+	// Recalculate luminosity.
+//	_luminosity = ;
+	
 	// TODO: Recalculate radius
 	
 	[self updateDisplay];
 }
 
-- (void)setSurfaceTemperature:(CGFloat)surfaceTemperature
+- (void)setSurfaceTemperature:(double)surfaceTemperature
 {
 	_surfaceTemperature = surfaceTemperature;
 	
@@ -87,7 +89,7 @@
 	CGFloat r, g, b = 1.0f;
 	
 	if ( self.surfaceTemperature < 0.25 ) {
-		CGFloat p = ((0.25f - self.surfaceTemperature) / 25.0f);
+		double p = ((0.25f - self.surfaceTemperature) / 25.0f);
 		r = 0.63 + (p * 0.05);
 		g = 0.71 + (p * 0.04);
 		b = 1.0;
@@ -118,21 +120,11 @@
 }
 
 
-#pragma mark - Drawing
+#pragma mark - Appearance
 
 - (void)updateDisplay
 {
 	self.backgroundColor = [self color];
 }
-
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-//- (void)drawRect:(CGRect)rect
-//{
-//	CGContextRef ctx = UIGraphicsGetCurrentContext();
-//    CGContextAddEllipseInRect(ctx, rect);
-//    CGContextSetFillColor(ctx, CGColorGetComponents([[self color] CGColor]));
-//    CGContextFillPath(ctx);
-//}
 
 @end

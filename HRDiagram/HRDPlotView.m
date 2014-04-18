@@ -17,6 +17,11 @@
 #define PLOT_WIDTH 892
 #define PLOT_HEIGHT 636
 
+#define X_VALUE_MIN 40000
+#define X_VALUE_MAX 2250
+#define Y_VALUE_MIN 14
+#define Y_VALUE_MAX -10
+
 @interface HRDPlotView ()
 
 ///	A newly created star.
@@ -127,10 +132,13 @@
 			
 			// The percentage of the x and y values on the graph.
 			CGFloat x = star.center.x / PLOT_WIDTH;
-			CGFloat y = star.center.y / PLOT_HEIGHT;
+			CGFloat y = 1 - (star.center.y / PLOT_HEIGHT);
 			
-			star.surfaceTemperature = x;
-			star.absoluteMagnitude = y;
+			double surfaceTemperature = X_VALUE_MIN + (x * (X_VALUE_MAX - X_VALUE_MIN));
+			double absoluteMagnitude  = Y_VALUE_MIN + (y * (Y_VALUE_MAX - Y_VALUE_MIN));
+			
+			star.surfaceTemperature = surfaceTemperature;
+			star.absoluteMagnitude = absoluteMagnitude;
 			
 			// Make transparent if it will be removed.
 			if ( !CGRectContainsPoint(self.bounds, sender.view.center) ) {
@@ -192,6 +200,18 @@
 		default:
 			break;
 	}
+}
+
+// TODO: Fix an issue where accidentally long pressing while trying to drag a star creates a new star.
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
+{
+	for ( UIView *view in self.subviews ) {
+		if ( view == [view hitTest:point withEvent:event] ) {
+			return view;
+		}
+	}
+	
+	return [super hitTest:point withEvent:event];
 }
 
 - (void)removeAllStars
