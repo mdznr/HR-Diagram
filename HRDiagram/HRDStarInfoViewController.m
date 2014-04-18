@@ -47,6 +47,8 @@
 
 int digits(float f)
 {
+	f = abs(f);
+	
 	if ( f < 0.001 ) {
 		return 4;
 	} else if ( f < 0.01 ) {
