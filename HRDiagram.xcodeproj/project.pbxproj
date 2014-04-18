@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C960D3F419005878007C341F /* HRDPlotView.m in Sources */ = {isa = PBXBuildFile; fileRef = C960D3F319005878007C341F /* HRDPlotView.m */; };
+		C960D3FB190077AB007C341F /* HRDStarInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C960D3F9190077AB007C341F /* HRDStarInfoTableViewController.m */; };
+		C960D3FC190077AB007C341F /* HRDStarInfoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C960D3FA190077AB007C341F /* HRDStarInfoTableViewController.xib */; };
 		C98BD51C18F7160800F0F61B /* HRDStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C98BD51B18F7160800F0F61B /* HRDStarView.m */; };
 		C9AF889C18F67EA1005E0CEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AF889B18F67EA1005E0CEC /* Foundation.framework */; };
 		C9AF889E18F67EA1005E0CEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AF889D18F67EA1005E0CEC /* CoreGraphics.framework */; };
@@ -38,6 +40,9 @@
 /* Begin PBXFileReference section */
 		C960D3F219005878007C341F /* HRDPlotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDPlotView.h; sourceTree = "<group>"; };
 		C960D3F319005878007C341F /* HRDPlotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDPlotView.m; sourceTree = "<group>"; };
+		C960D3F8190077AB007C341F /* HRDStarInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDStarInfoTableViewController.h; sourceTree = "<group>"; };
+		C960D3F9190077AB007C341F /* HRDStarInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDStarInfoTableViewController.m; sourceTree = "<group>"; };
+		C960D3FA190077AB007C341F /* HRDStarInfoTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HRDStarInfoTableViewController.xib; sourceTree = "<group>"; };
 		C98BD51A18F7160800F0F61B /* HRDStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDStarView.h; sourceTree = "<group>"; };
 		C98BD51B18F7160800F0F61B /* HRDStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDStarView.m; sourceTree = "<group>"; };
 		C9AF889818F67EA1005E0CEC /* HRDiagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HRDiagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +132,9 @@
 				C960D3F319005878007C341F /* HRDPlotView.m */,
 				C98BD51A18F7160800F0F61B /* HRDStarView.h */,
 				C98BD51B18F7160800F0F61B /* HRDStarView.m */,
+				C960D3F8190077AB007C341F /* HRDStarInfoTableViewController.h */,
+				C960D3F9190077AB007C341F /* HRDStarInfoTableViewController.m */,
+				C960D3FA190077AB007C341F /* HRDStarInfoTableViewController.xib */,
 				C9AF88B318F67EA1005E0CEC /* Images.xcassets */,
 				C9AF88A218F67EA1005E0CEC /* Supporting Files */,
 			);
@@ -244,6 +252,7 @@
 			files = (
 				C9AF88B418F67EA1005E0CEC /* Images.xcassets in Resources */,
 				C9AF88A618F67EA1005E0CEC /* InfoPlist.strings in Resources */,
+				C960D3FC190077AB007C341F /* HRDStarInfoTableViewController.xib in Resources */,
 				C9AF88AF18F67EA1005E0CEC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C960D3FB190077AB007C341F /* HRDStarInfoTableViewController.m in Sources */,
 				C9AF88A818F67EA1005E0CEC /* main.m in Sources */,
 				C9AF88B218F67EA1005E0CEC /* HRDViewController.m in Sources */,
 				C9AF88AC18F67EA1005E0CEC /* HRDAppDelegate.m in Sources */,

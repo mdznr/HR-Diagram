@@ -9,6 +9,7 @@
 #import "HRDPlotView.h"
 
 #import "HRDStarView.h"
+#import "HRDStarInfoTableViewController.h"
 
 #define SUN_FRAME CGRectMake(566, 360, 44, 44)
 #define SUN_CENTER CGPointMake(588, 382)
@@ -20,6 +21,9 @@
 
 ///	A newly created star.
 @property (strong, nonatomic) HRDStarView *youngStar;
+
+///	A popover to show stats about stars.
+@property (strong, nonatomic) UIPopoverController *popover;
 
 @end
 
@@ -152,6 +156,11 @@
 {
 	HRDStarView *star = (HRDStarView *) sender.view;
 	// TODO: Bring up popover menu with stats.
+	
+	HRDStarInfoTableViewController *vc = [[HRDStarInfoTableViewController alloc] initWithNibName:@"HRDStarInfoTableViewController" bundle:nil];
+	// Configure VC
+	self.popover = [[UIPopoverController alloc] initWithContentViewController:vc];
+	[self.popover presentPopoverFromRect:star.frame inView:self permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
 - (void)didLongPress:(UILongPressGestureRecognizer *)sender
