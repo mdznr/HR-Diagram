@@ -155,13 +155,18 @@
 - (void)didTapOnStar:(UITapGestureRecognizer *)sender
 {
 	HRDStarView *star = (HRDStarView *) sender.view;
-	// TODO: Bring up popover menu with stats.
 	
+	// Create the content view controller.
 	HRDStarInfoViewController *vc = [[HRDStarInfoViewController alloc] initWithNibName:@"HRDStarInfoViewController" bundle:nil];
-	// Configure VC
+	[vc setStar:star];
+	
+	// Create and display the popover.
 	self.popover = [[UIPopoverController alloc] initWithContentViewController:vc];
 	self.popover.popoverContentSize = CGSizeMake(264, 205);
-	[self.popover presentPopoverFromRect:star.frame inView:self permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+	[self.popover presentPopoverFromRect:star.frame
+								  inView:self
+				permittedArrowDirections:UIPopoverArrowDirectionAny
+								animated:YES];
 }
 
 - (void)didLongPress:(UILongPressGestureRecognizer *)sender

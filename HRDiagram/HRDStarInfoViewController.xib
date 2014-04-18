@@ -6,6 +6,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HRDStarInfoViewController">
             <connections>
+                <outlet property="absoluteMagnitudeValueLabel" destination="GDv-BU-zpD" id="YEa-Sy-iXJ"/>
+                <outlet property="colorIndexValueLabel" destination="Rbc-eR-pr2" id="s37-hk-hiT"/>
+                <outlet property="luminosityValueLabel" destination="4dz-K6-52h" id="oxu-vd-Ir7"/>
+                <outlet property="radiusValueLabel" destination="ApQ-75-da8" id="67F-T6-Bfb"/>
+                <outlet property="spectralClassValueLabel" destination="Gcn-Us-8mp" id="RpR-xO-c1P"/>
+                <outlet property="surfaceTemperatureValueLabel" destination="ges-L3-8Ep" id="LQn-2Z-yZM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

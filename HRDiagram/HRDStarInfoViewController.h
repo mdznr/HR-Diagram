@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "HRDStarView.h"
+
 @interface HRDStarInfoViewController : UIViewController
+
+///	The star view to display info for.
+@property (nonatomic, copy) HRDStarView *star;
 
 @end
