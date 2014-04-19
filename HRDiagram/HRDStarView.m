@@ -8,6 +8,14 @@
 
 #import "HRDStarView.h"
 
+@interface HRDStarView ()
+
+// The color stops.
+// Stop point, color value.
+@property (strong, nonatomic) NSArray *colorStops;
+
+@end
+
 @implementation HRDStarView
 
 - (id)initWithFrame:(CGRect)frame
@@ -43,6 +51,19 @@
 	
 	// Defaults.
 	self.backgroundColor = [UIColor whiteColor];
+	
+	// Must be increasing (for now).
+	self.colorStops = @[
+						 @2500, [UIColor colorWithHue:0.09 saturation:0.74 brightness:1 alpha:1],
+						 @3750, [UIColor colorWithHue:0.09 saturation:0.40 brightness:1 alpha:1],
+						 @5000, [UIColor colorWithHue:0.09 saturation:0.20 brightness:1 alpha:1],
+						 @7500, [UIColor colorWithHue:0.65 saturation:0.07 brightness:1 alpha:1],
+						@10000, [UIColor colorWithHue:0.63 saturation:0.19 brightness:1 alpha:1],
+						@15000, [UIColor colorWithHue:0.63 saturation:0.29 brightness:1 alpha:1],
+						@20000, [UIColor colorWithHue:0.63 saturation:0.32 brightness:1 alpha:1],
+						@30000, [UIColor colorWithHue:0.63 saturation:0.35 brightness:1 alpha:1],
+						@40000, [UIColor colorWithHue:0.63 saturation:0.37 brightness:1 alpha:1],
+						];
 }
 
 
@@ -85,25 +106,16 @@
 
 - (UIColor *)color
 {
-	if ( self.surfaceTemperature < 2500 ) {
-		return [UIColor colorWithHue:0.09 saturation:0.74 brightness:1 alpha:1]; //  2,500
-	} else if ( self.surfaceTemperature < 3750 ) {
-		return [UIColor colorWithHue:0.09 saturation:0.40 brightness:1 alpha:1]; //  3,750
-	} else if ( self.surfaceTemperature < 5000 ) {
-		return [UIColor colorWithHue:0.09 saturation:0.20 brightness:1 alpha:1]; //  5,000
-	} else if ( self.surfaceTemperature < 7500 ) {
-		return [UIColor colorWithHue:0.65 saturation:0.07 brightness:1 alpha:1]; //  7,500
-	} else if ( self.surfaceTemperature < 10000 ) {
-		return [UIColor colorWithHue:0.63 saturation:0.19 brightness:1 alpha:1]; // 10,000
-	} else if ( self.surfaceTemperature < 15000 ) {
-		return [UIColor colorWithHue:0.63 saturation:0.29 brightness:1 alpha:1]; // 15,000
-	} else if ( self.surfaceTemperature < 20000 ) {
-		return [UIColor colorWithHue:0.63 saturation:0.32 brightness:1 alpha:1]; // 20,000
-	} else if ( self.surfaceTemperature < 30000 ) {
-		return [UIColor colorWithHue:0.63 saturation:0.35 brightness:1 alpha:1]; // 30,000
-	} else {
-		return [UIColor colorWithHue:0.63 saturation:0.37 brightness:1 alpha:1]; // 40,000
+	// Go through all the stops.
+	for ( int i=0; i<self.colorStops.count; i+=2 ) {
+		NSUInteger index = i;
+		if ( self.surfaceTemperature < ((NSNumber *) self.colorStops[index]).doubleValue ) {
+			return (UIColor *) self.colorStops[index+1];
+		}
 	}
+	
+	// Default color.
+	return [UIColor whiteColor];
 }
 
 
