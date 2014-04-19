@@ -84,7 +84,7 @@
 
 - (void)setPoint:(CGPoint)point
 {
-	_colorIndex         = pow(((point.x) * sqrt(2.25 - -0.4)), 2) + -0.4;
+	_colorIndex = pow(((point.x) * sqrt(2.25 - -0.4)), 2) + -0.4;
 	_surfaceTemperature = pow(((1-point.x) * sqrt(X_VALUE_MIN - X_VALUE_MAX)), 2) + X_VALUE_MAX;
 	if ( _surfaceTemperature < 4000 ) {
 		_spectralClass = @"M";
@@ -107,7 +107,9 @@
 	_absoluteMagnitude  = Y_VALUE_MIN + (point.y * (Y_VALUE_MAX - Y_VALUE_MIN));
 	_luminosity = 10 * pow(10, (-10 * point.y) + 6);
 	
-	// TODO: Recalculate radius.
+	// Calculate radius.
+	double r = point.y + (0.5 * point.x);
+	_radius = pow((r * sqrt(1000 - 0.001)), 1) + 0.001;
 	
 	[self updateDisplay];
 }
