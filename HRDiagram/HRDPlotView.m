@@ -182,6 +182,12 @@
 			// Move star to stay centered with touch.
 			self.youngStar.center = [sender locationInView:self];
 			
+			// The percentage of the x and y values on the graph.
+			CGFloat x = self.youngStar.center.x / PLOT_WIDTH;
+			CGFloat y = 1 - (self.youngStar.center.y / PLOT_HEIGHT);
+			
+			self.youngStar.point = CGPointMake(x, y);
+			
 			// Make transparent if it will be removed.
 			if ( !CGRectContainsPoint(self.bounds, self.youngStar.center) ) {
 				self.youngStar.alpha = 0.5f;

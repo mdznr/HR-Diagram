@@ -84,8 +84,8 @@
 
 - (void)setPoint:(CGPoint)point
 {
-	_surfaceTemperature = pow(((1-point.x) * sqrt(X_VALUE_MIN - X_VALUE_MAX)), 2) + X_VALUE_MAX;
 	_colorIndex         = pow(((point.x) * sqrt(2.25 - -0.4)), 2) + -0.4;
+	_surfaceTemperature = pow(((1-point.x) * sqrt(X_VALUE_MIN - X_VALUE_MAX)), 2) + X_VALUE_MAX;
 	if ( _surfaceTemperature < 4000 ) {
 		_spectralClass = @"M";
 	} else if ( _surfaceTemperature <  5200 ) {
