@@ -18,7 +18,7 @@
 #define PLOT_HEIGHT 636
 
 #define X_VALUE_MIN 40000
-#define X_VALUE_MAX 2250
+#define X_VALUE_MAX 2500
 #define Y_VALUE_MIN 14
 #define Y_VALUE_MAX -10
 
@@ -134,13 +134,8 @@
 			CGFloat x = star.center.x / PLOT_WIDTH;
 			CGFloat y = 1 - (star.center.y / PLOT_HEIGHT);
 			
-//			double surfaceTemperature = X_VALUE_MIN + (x * (X_VALUE_MAX - X_VALUE_MIN)); // Linear
-//			double absoluteMagnitude  = pow((y + sqrt(Y_VALUE_MAX - Y_VALUE_MIN)), 2) + Y_VALUE_MIN; // Logarithmic
-			
 			double surfaceTemperature = pow(((1-x) * sqrt(X_VALUE_MIN - X_VALUE_MAX)), 2) + X_VALUE_MAX; // Logarithmic
 			double absoluteMagnitude  = Y_VALUE_MIN + (y * (Y_VALUE_MAX - Y_VALUE_MIN)); // Linear
-			
-			NSLog(@"X: %f V: %f", x, surfaceTemperature);
 			
 			star.surfaceTemperature = surfaceTemperature;
 			star.absoluteMagnitude = absoluteMagnitude;
