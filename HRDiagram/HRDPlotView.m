@@ -103,6 +103,12 @@
 - (void)addStar:(HRDStarView *)star
 {
 	[self addSubview:star];
+	
+	// The percentage of the x and y values on the graph.
+	CGFloat x = star.center.x / PLOT_WIDTH;
+	CGFloat y = 1 - (star.center.y / PLOT_HEIGHT);
+	
+	star.point = CGPointMake(x, y);
 }
 
 
