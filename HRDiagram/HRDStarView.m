@@ -8,6 +8,12 @@
 
 #import "HRDStarView.h"
 
+// BAD PROGRAMMING! The star view should not know about the plot size. I don't have time to make this elegant.
+#define X_VALUE_MIN 40000
+#define X_VALUE_MAX 2500
+#define Y_VALUE_MIN 14
+#define Y_VALUE_MAX -10
+
 @interface HRDStarView ()
 
 // The color stops.
@@ -76,52 +82,35 @@
 
 #pragma mark - Properties
 
-- (void)setAbsoluteMagnitude:(double)absoluteMagnitude
+- (void)setPoint:(CGPoint)point
 {
-	_absoluteMagnitude = absoluteMagnitude;
+	_surfaceTemperature = pow(((1-point.x) * sqrt(X_VALUE_MIN - X_VALUE_MAX)), 2) + X_VALUE_MAX;
+	_colorIndex         = pow(((point.x) * sqrt(2.25 - -0.4)), 2) + -0.4;
+	if ( _surfaceTemperature < 4000 ) {
+		_spectralClass = @"M";
+	} else if ( _surfaceTemperature <  5200 ) {
+		_spectralClass = @"K";
+	} else if ( _surfaceTemperature <  6000 ) {
+		_spectralClass = @"G";
+	} else if ( _surfaceTemperature <  7600 ) {
+		_spectralClass = @"F";
+	} else if ( _surfaceTemperature < 10000 ) {
+		_spectralClass = @"A";
+	} else if ( _surfaceTemperature < 30000 ) {
+		_spectralClass = @"B";
+	} else if ( _surfaceTemperature < 52000 ) {
+		_spectralClass = @"O";
+	} else {
+		_spectralClass = @"?";
+	}
 	
-	// Recalculate luminosity.
-	double x = (absoluteMagnitude + 10)/24;
-	double exponent = (-10 * x) + 6;
-	_luminosity = 10 * pow(10, exponent);
+	_absoluteMagnitude  = Y_VALUE_MIN + (point.y * (Y_VALUE_MAX - Y_VALUE_MIN));
+	_luminosity = 10 * pow(10, (-10 * point.y) + 6);
 	
 	// TODO: Recalculate radius.
 	
 	[self updateDisplay];
 }
-
-- (void)setSurfaceTemperature:(double)surfaceTemperature
-{
-	_surfaceTemperature = surfaceTemperature;
-	
-	// TODO: Recalculate colorIndex
-	
-	// Recalculate spectralClass.
-	if ( surfaceTemperature < 4000 ) {
-		_spectralClass = @"M";
-	} else if ( surfaceTemperature <  5200 ) {
-		_spectralClass = @"K";
-	} else if ( surfaceTemperature <  6000 ) {
-		_spectralClass = @"G";
-	} else if ( surfaceTemperature <  7600 ) {
-		_spectralClass = @"F";
-	} else if ( surfaceTemperature < 10000 ) {
-		_spectralClass = @"A";
-	} else if ( surfaceTemperature < 30000 ) {
-		_spectralClass = @"B";
-	} else if ( surfaceTemperature < 52000 ) {
-		_spectralClass = @"O";
-	} else {
-		_spectralClass = @"X";
-	}
-	
-	
-	// TODO: Recalculate radius
-	
-	[self updateDisplay];
-}
-
-// TODO: Setters for other properties
 
 
 #pragma mark - Private API

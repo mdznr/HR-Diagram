@@ -10,6 +10,10 @@
 
 @interface HRDStarView : UIView
 
+///	THIS IS BAD PROGRAMMING! :(
+///	@param point The point on the plot.
+- (void)setPoint:(CGPoint)point;
+
 ///	The Radius (R☉) of the star.
 /// @discussion The value of this is a function of luminosity/absoluteMagnitude and temperature/color.
 @property (nonatomic) double radius;

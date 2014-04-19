@@ -17,11 +17,6 @@
 #define PLOT_WIDTH 892
 #define PLOT_HEIGHT 636
 
-#define X_VALUE_MIN 40000
-#define X_VALUE_MAX 2500
-#define Y_VALUE_MIN 14
-#define Y_VALUE_MAX -10
-
 @interface HRDPlotView ()
 
 ///	A newly created star.
@@ -134,11 +129,7 @@
 			CGFloat x = star.center.x / PLOT_WIDTH;
 			CGFloat y = 1 - (star.center.y / PLOT_HEIGHT);
 			
-			double surfaceTemperature = pow(((1-x) * sqrt(X_VALUE_MIN - X_VALUE_MAX)), 2) + X_VALUE_MAX; // Logarithmic
-			double absoluteMagnitude  = Y_VALUE_MIN + (y * (Y_VALUE_MAX - Y_VALUE_MIN)); // Linear
-			
-			star.surfaceTemperature = surfaceTemperature;
-			star.absoluteMagnitude = absoluteMagnitude;
+			star.point = CGPointMake(x, y);
 			
 			// Make transparent if it will be removed.
 			if ( !CGRectContainsPoint(self.bounds, sender.view.center) ) {
