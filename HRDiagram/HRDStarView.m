@@ -85,38 +85,28 @@
 
 - (UIColor *)color
 {
-	// Red, green, and blue components.
-	CGFloat r, g, b = 1.0f;
-	
-	if ( self.surfaceTemperature < 0.25 ) {
-		double p = ((0.25f - self.surfaceTemperature) / 25.0f);
-		r = 0.63 + (p * 0.05);
-		g = 0.71 + (p * 0.04);
-		b = 1.0;
-	} else if ( self.surfaceTemperature < 0.5 ) {
-		CGFloat p = ((0.5f - self.surfaceTemperature) / 25.0f);
-		r = 0.68 + (p * 0.13);
-		g = 0.75 + (p * 0.10);
-		b = 1.0;
-	} else if ( self.surfaceTemperature < 0.75) {
-		CGFloat p = ((0.75f - self.surfaceTemperature) / 25.0f);
-		r = 0.81 + (p * 0.19);
-		g = 0.85 + (p * 0.05);
-		b = 1.00 - (p * 0.20);
+	if ( self.surfaceTemperature < 2500 ) {
+		return [UIColor colorWithHue:0.09 saturation:0.74 brightness:1 alpha:1]; //  2,500
+	} else if ( self.surfaceTemperature < 3750 ) {
+		return [UIColor colorWithHue:0.09 saturation:0.40 brightness:1 alpha:1]; //  3,750
+	} else if ( self.surfaceTemperature < 5000 ) {
+		return [UIColor colorWithHue:0.09 saturation:0.20 brightness:1 alpha:1]; //  5,000
+	} else if ( self.surfaceTemperature < 7500 ) {
+		return [UIColor colorWithHue:0.65 saturation:0.07 brightness:1 alpha:1]; //  7,500
+	} else if ( self.surfaceTemperature < 10000 ) {
+		return [UIColor colorWithHue:0.63 saturation:0.19 brightness:1 alpha:1]; // 10,000
+	} else if ( self.surfaceTemperature < 15000 ) {
+		return [UIColor colorWithHue:0.63 saturation:0.29 brightness:1 alpha:1]; // 15,000
+	} else if ( self.surfaceTemperature < 20000 ) {
+		return [UIColor colorWithHue:0.63 saturation:0.32 brightness:1 alpha:1]; // 20,000
+	} else if ( self.surfaceTemperature < 30000 ) {
+		return [UIColor colorWithHue:0.63 saturation:0.35 brightness:1 alpha:1]; // 30,000
 	} else {
-		CGFloat p = ((1.00f - self.surfaceTemperature) / 25.0f);
-		r = 1.0;
-		g = 0.9 - (p * 0.25);
-		b = 0.8 - (p * 0.54);
+		return [UIColor colorWithHue:0.63 saturation:0.37 brightness:1 alpha:1]; // 40,000
 	}
 	
-	return [UIColor colorWithRed:r green:g blue:b alpha:1.0f];
-	
-	// 0.00: [UIColor colorWithRed:0.63 green:0.71 blue:1.00 alpha:1]
-	// 0.25: [UIColor colorWithRed:0.68 green:0.75 blue:1.00 alpha:1]
-	// 0.50: [UIColor colorWithRed:0.81 green:0.85 blue:1.00 alpha:1]
-	// 0.75: [UIColor colorWithRed:1.00 green:0.90 blue:0.80 alpha:1]
-	// 1.00: [UIColor colorWithRed:1.00 green:0.65 blue:0.26 alpha:1]
+	// Default.
+	return [UIColor whiteColor];
 }
 
 
