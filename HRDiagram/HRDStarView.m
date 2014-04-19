@@ -105,11 +105,10 @@
 	}
 	
 	_absoluteMagnitude  = Y_VALUE_MIN + (point.y * (Y_VALUE_MAX - Y_VALUE_MIN));
-	_luminosity = 10 * pow(10, (-10 * point.y) + 6);
+	_luminosity = 10 * pow(10, (-10 * (1-point.y)) + 6);
 	
 	// Calculate radius.
-	double r = point.y + (0.5 * point.x);
-	_radius = pow((r * sqrt(1000 - 0.001)), 1) + 0.001;
+	_radius = sqrt(_luminosity) / pow(_surfaceTemperature/5800.0f, 2);
 	
 	[self updateDisplay];
 }
