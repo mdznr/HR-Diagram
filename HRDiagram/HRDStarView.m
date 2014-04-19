@@ -81,9 +81,11 @@
 	_absoluteMagnitude = absoluteMagnitude;
 	
 	// Recalculate luminosity.
-//	_luminosity = ;
+	double x = (absoluteMagnitude + 10)/24;
+	double exponent = (-10 * x) + 6;
+	_luminosity = 10 * pow(10, exponent);
 	
-	// TODO: Recalculate radius
+	// TODO: Recalculate radius.
 	
 	[self updateDisplay];
 }
@@ -93,7 +95,27 @@
 	_surfaceTemperature = surfaceTemperature;
 	
 	// TODO: Recalculate colorIndex
-	// TODO: Recalculate spectralClass
+	
+	// Recalculate spectralClass.
+	if ( surfaceTemperature < 4000 ) {
+		_spectralClass = @"M";
+	} else if ( surfaceTemperature <  5200 ) {
+		_spectralClass = @"K";
+	} else if ( surfaceTemperature <  6000 ) {
+		_spectralClass = @"G";
+	} else if ( surfaceTemperature <  7600 ) {
+		_spectralClass = @"F";
+	} else if ( surfaceTemperature < 10000 ) {
+		_spectralClass = @"A";
+	} else if ( surfaceTemperature < 30000 ) {
+		_spectralClass = @"B";
+	} else if ( surfaceTemperature < 52000 ) {
+		_spectralClass = @"O";
+	} else {
+		_spectralClass = @"X";
+	}
+	
+	
 	// TODO: Recalculate radius
 	
 	[self updateDisplay];
