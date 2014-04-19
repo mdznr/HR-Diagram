@@ -190,9 +190,19 @@
 		case UIGestureRecognizerStateChanged:
 			// Move star to stay centered with touch.
 			self.youngStar.center = [sender locationInView:self];
-			// TODO:
+			
+			// Make transparent if it will be removed.
+			if ( !CGRectContainsPoint(self.bounds, self.youngStar.center) ) {
+				self.youngStar.alpha = 0.5f;
+			} else {
+				self.youngStar.alpha = 1.0f;
+			}
 			break;
 		case UIGestureRecognizerStateEnded:
+			if ( !CGRectContainsPoint(self.bounds, self.youngStar.center) ) {
+				// TODO: Poof?
+				[self.youngStar removeFromSuperview];
+			}
 			self.youngStar = nil;
 			break;
 		case UIGestureRecognizerStateCancelled:
