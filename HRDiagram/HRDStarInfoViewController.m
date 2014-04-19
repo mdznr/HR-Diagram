@@ -65,7 +65,7 @@ int digits(float f)
 - (void)refreshStarInfo
 {
 	self.radiusValueLabel.text = [NSString stringWithFormat:@"%00.*f R⊙", digits(self.star.radius), self.star.radius];
-	self.luminosityValueLabel.text = [NSString stringWithFormat:@"%00.*f L⊙", digits(self.star.luminosity), self.star.luminosity];
+	self.luminosityValueLabel.text = [NSString stringWithFormat:@"%0.0E L⊙", self.star.luminosity];
 	self.absoluteMagnitudeValueLabel.text = [NSString stringWithFormat:@"%00.*f M", digits(self.star.absoluteMagnitude), self.star.absoluteMagnitude];
 	self.surfaceTemperatureValueLabel.text = [NSString stringWithFormat:@"%00.*f K", digits(self.star.surfaceTemperature), self.star.surfaceTemperature];
 	self.colorIndexValueLabel.text = [NSString stringWithFormat:@"%00.*f", digits(self.star.colorIndex), self.star.colorIndex];
