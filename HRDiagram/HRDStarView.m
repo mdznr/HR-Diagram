@@ -104,9 +104,6 @@
 	} else {
 		return [UIColor colorWithHue:0.63 saturation:0.37 brightness:1 alpha:1]; // 40,000
 	}
-	
-	// Default.
-	return [UIColor whiteColor];
 }
 
 
