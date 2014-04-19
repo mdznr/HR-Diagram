@@ -177,7 +177,7 @@
 		case UIGestureRecognizerStateBegan:
 			// Create a star at that point.
 			self.youngStar = [self createStarAtPoint:point];
-			break;
+			
 		case UIGestureRecognizerStateChanged:
 			// Move star to stay centered with touch.
 			self.youngStar.center = [sender locationInView:self];
