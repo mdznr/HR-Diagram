@@ -89,7 +89,7 @@
 						  delay:0.0f
 		 usingSpringWithDamping:0.5f
 		  initialSpringVelocity:2.0f
-						options:UIViewAnimationOptionBeginFromCurrentState
+						options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionAllowUserInteraction
 					 animations:^{
 						 star.frame = CGRectMake(point.x-22, point.y-22, 44, 44);
 					 } completion:nil];
@@ -137,18 +137,18 @@
 			star.point = CGPointMake(x, y);
 			
 			// Make transparent if it will be removed.
-			if ( !CGRectContainsPoint(self.bounds, sender.view.center) ) {
-				star.alpha = 0.5f;
-			} else {
-				star.alpha = 1.0f;
-			}
-			
+			[UIView animateWithDuration:0.2 delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+				if ( !CGRectContainsPoint(self.bounds, sender.view.center) ) {
+					star.alpha = 0.5f;
+				} else {
+					star.alpha = 1.0f;
+				}
+			} completion:nil];
 		} break;
 		case UIGestureRecognizerStateCancelled:
 		case UIGestureRecognizerStateEnded: {
 			if ( !CGRectContainsPoint(self.bounds, sender.view.center) ) {
-				// TODO: Poof?
-				[sender.view removeFromSuperview];
+				[self removeStar:sender.view animated:YES];
 			}
 		} break;
 		default:
@@ -179,11 +179,11 @@
 	CGPoint point = [sender locationInView:sender.view];
 	
 	switch (sender.state) {
-		case UIGestureRecognizerStateBegan:
+		case UIGestureRecognizerStateBegan: {
 			// Create a star at that point.
 			self.youngStar = [self createStarAtPoint:point];
-			
-		case UIGestureRecognizerStateChanged:
+		}
+		case UIGestureRecognizerStateChanged: {
 			// Move star to stay centered with touch.
 			self.youngStar.center = [sender locationInView:self];
 			
@@ -194,19 +194,20 @@
 			self.youngStar.point = CGPointMake(x, y);
 			
 			// Make transparent if it will be removed.
+			[UIView animateWithDuration:0.2 delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+				if ( !CGRectContainsPoint(self.bounds, self.youngStar.center) ) {
+					self.youngStar.alpha = 0.5f;
+				} else {
+					self.youngStar.alpha = 1.0f;
+				}
+			} completion:nil];
+		} break;
+		case UIGestureRecognizerStateEnded: {
 			if ( !CGRectContainsPoint(self.bounds, self.youngStar.center) ) {
-				self.youngStar.alpha = 0.5f;
-			} else {
-				self.youngStar.alpha = 1.0f;
-			}
-			break;
-		case UIGestureRecognizerStateEnded:
-			if ( !CGRectContainsPoint(self.bounds, self.youngStar.center) ) {
-				// TODO: Poof?
-				[self.youngStar removeFromSuperview];
+				[self removeStar:self.youngStar animated:YES];
 			}
 			self.youngStar = nil;
-			break;
+		} break;
 		case UIGestureRecognizerStateCancelled:
 			break;
 		default:
@@ -226,34 +227,45 @@
 	return [super hitTest:point withEvent:event];
 }
 
+- (void)removeStar:(UIView *)star animated:(BOOL)animated
+{
+	return animated ? [self removeStarAnimated:star] : [self removeStar:star];
+}
+
+- (void)removeStarAnimated:(UIView *)star
+{
+	[UIView animateWithDuration:0.2f
+						  delay:0.0f
+						options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseInOut
+					 animations:^{
+						 star.alpha = 0.0f;
+					 }
+					 completion:^(BOOL finished) {
+						 [self removeStar:star];
+					 }];
+}
+
+- (void)removeStar:(UIView *)star
+{
+	[star removeFromSuperview];
+}
+
+- (void)removeAllStarsAnimated:(BOOL)animated
+{
+	return animated ? [self removeAllStarsWithAnimation] : [self removeAllStars];
+}
+
 - (void)removeAllStars
 {
-	for ( UIView *subview in self.subviews ) {
-		[subview removeFromSuperview];
+	for ( UIView *star in self.subviews ) {
+		[self removeStar:star];
 	}
 }
 
 - (void)removeAllStarsWithAnimation
 {
-	for ( UIView *subview in self.subviews ) {
-		[UIView animateWithDuration:0.4f
-							  delay:0.0f
-							options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseInOut
-						 animations:^{
-							 subview.alpha = 0.0f;
-						 }
-						 completion:^(BOOL finished) {
-							 [subview removeFromSuperview];
-						 }];
-	}
-}
-
-- (void)removeAllStarsAnimated:(BOOL)animated
-{
-	if ( animated ) {
-		[self removeAllStarsWithAnimation];
-	} else {
-		[self removeAllStars];
+	for ( UIView *star in self.subviews ) {
+		[self removeStarAnimated:star];
 	}
 }
 
