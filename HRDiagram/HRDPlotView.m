@@ -60,7 +60,6 @@
 {
 	// Create long press gesture recognizer.
 	UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(didLongPress:)];
-	longPress.minimumPressDuration = 0.2f;
 	[self addGestureRecognizer:longPress];
 	
 	// Create the first star at a particular point.
