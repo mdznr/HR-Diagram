@@ -8,6 +8,8 @@
 
 #import "HRDStarView.h"
 
+#include <math.h>
+
 // BAD PROGRAMMING! The star view should not know about the plot size. I don't have time to make this elegant.
 #define X_VALUE_MIN 40000
 #define X_VALUE_MAX 2500
@@ -130,11 +132,23 @@
 	return [UIColor whiteColor];
 }
 
+- (CGFloat)visualDiameter
+{
+	return 44 + (2 * log(self.radius));
+}
+
 
 #pragma mark - Appearance
 
 - (void)updateDisplay
 {
+	// Update the size of the star.
+	CGFloat diameter = [self visualDiameter];
+	CGPoint center = self.center;
+	self.frame = CGRectMake(0, 0, diameter, diameter);
+	self.center = center;
+	
+	// Update the color of the star.
 	self.backgroundColor = [self color];
 }
 
